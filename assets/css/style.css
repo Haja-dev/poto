@@ -14,6 +14,7 @@ body {
 
 .wrap {
     display: flex;
+    flex-wrap: wrap;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -191,13 +192,14 @@ header p {
 ===================== */
 
 .process {
-    height: 633px;
+    /* height: 633px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #7cbdf7;
     color: white;
     background: linear-gradient(to right, #63c6ee, #2cccc3);
+    padding: 60px 0;
 }
 
 .process .wrap {
@@ -215,8 +217,10 @@ header p {
 
 .process-list {
     display: flex;
-    height: 316px;
+    flex-wrap: wrap;
+    /* height: 316px; */
     color: white;
+    padding: 54px 25px;
 }
 
 .process-list > div {
@@ -224,7 +228,8 @@ header p {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 33%;
+    /* width: 33%; */
+    flex: 0 0 33%;
     padding: 15px;
 }
 
@@ -235,7 +240,8 @@ header p {
 
 .process-list > :nth-child(2) {
     /* background-color: seagreen; */
-    width: 34%;
+    /* width: 34%; */
+    flex: 0 0 34%;
     /* background: linear-gradient(to right, #63c6ee, #2cccc3); */
 }
 
@@ -391,14 +397,16 @@ header p {
 
 .testimonial .wrap {
     height: 100%;
+    flex-wrap: wrap;
 }
 
 .left {
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 0 0 50%;
 }
 
 .left i {
@@ -412,20 +420,29 @@ header p {
 .right {
     background-color: #566666;
     color: #fff;
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 0 0 50%;
 }
 
+.testi-meta {
+    text-align: center;
+}
+
+.left, .right,
+.contact-meta, .contact-form {
+    padding: 50px 25px;
+}
 
 /* =====================
     Contact 
 ===================== */
 
 .contact-meta {
-    width: 50%;
+    /* width: 50%; */
     border-right: 2px solid white;
     display: flex;
     flex-direction: column;
@@ -433,6 +450,8 @@ header p {
     align-items: center;
     background-color: lightblue;
     color: #fff;
+    flex: 0 0 50%;
+    text-align: center;
 }
 
 .contact-meta h2 {
@@ -444,8 +463,9 @@ header p {
 }
 
 .contact-form {
-    width: 50%;
+    /* width: 50%; */
     padding: 30px;
+    flex: 0 0 50%;
 }
 
 .contact-form form {
@@ -466,11 +486,11 @@ header p {
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #d7d7d7;
+    color: gray;
 }
 
 .contact-form form p textarea {
     height: 162px;
-    color: gray;
     max-width: 262px;
 }
 
@@ -497,4 +517,60 @@ footer {
 
 footer .wrap {
     padding: 20px; 
+}
+
+
+/* =====================
+    Responsive 
+===================== */
+@media (max-width: 992px) {
+    .process-list > div,
+    .process-list > :nth-child(2) {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 950px) {
+    .contact-form form {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-list > div,
+    .process-list > :nth-child(2) {
+        flex: 0 0 100%;
+    }
+
+    .testimonial {
+        height: auto;
+    }
+
+    .left, .right,
+    .contact-meta, .contact-form {
+        flex: 0 0 100%;
+        /* padding: 50px 25px; */
+    }
+
+    .contact-form form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .contact-form p,
+    .contact-form form input, 
+    .contact-form form p textarea {
+        width: 100%;
+    }
+ 
+    .contact-form form p textarea {
+        max-width: 260px;
+    }
 }
