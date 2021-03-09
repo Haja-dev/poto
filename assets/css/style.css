@@ -57,7 +57,7 @@ header {
 
 header > * {
     position: relative;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 header::before {
@@ -85,6 +85,7 @@ header .wrap {
     visibility: hidden;
     background-color: #25b0a8;
     transition: all 0.4s linear 0s;
+    z-index: 10;
 }
 
 .nav-menu nav {
@@ -100,7 +101,7 @@ a.command {
     top: 16px;
     /* padding: 3px 4px; */
     left: 53px;
-    z-index: 3;
+    z-index: 12;
 
     /* border: 1px solid white; */
     border-radius: 50%;
@@ -109,6 +110,7 @@ a.command {
     height: 40px;
     background-color: #1fbbaa;
     color: #fff;
+    cursor: pointer;
 }
 
 a.command i {
@@ -147,6 +149,10 @@ nav ul li a:hover {
 
 .social-share a:hover {
    color: #c3e5ec;
+}
+
+.banner-content {
+    z-index: 0;
 }
 
 header h1 {
